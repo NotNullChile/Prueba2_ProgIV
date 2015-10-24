@@ -19,7 +19,7 @@ namespace Negocio
         [System.ComponentModel.DataObjectMethod(System.ComponentModel.DataObjectMethodType.Select, true)]
         public ClubException.DTsDataTable mostrarDTs()
         {
-            return dts.GetData();
+            return dts.GetData(); 
         }
     }
 }
