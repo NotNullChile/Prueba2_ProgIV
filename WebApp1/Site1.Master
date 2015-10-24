@@ -1,0 +1,37 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebApp1.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="CSS/basic.css"/>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body >
+    <form id="form1" runat="server">
+    <div>
+    <a href="RegistroEquipos.aspx">Mantenedor de Equipos</a><br />
+    <a href="registropartidos.aspx">Mantenedor de Partidos</a><br />
+    <a href="registrogoleadores.aspx">Mantenedor de Goleadores</a><br />
+    <a href="reportegoles.aspx">Total Goles del Torneo</a><br />
+    <a href="reportepartidos.aspx">Partidos Jugados y sus Resultados</a><br />
+    <a href="listadoequipos.aspx">Listado de Todos los equipos</a><br />
+    <a href="reporteequipos.aspx">Listado de Equipos y sus Puntajes</a><br />
+    <a href="reportegoleadores.aspx">Los 3 mejores jugadores del Torneo</a><br />
+    <a href="reportetecnicos.aspx">Ver el nombre del DT de un equipo</a><br />
+    <p/>
+
+        <asp:ContentPlaceHolder ID="titulo" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    <div>
+        <asp:ContentPlaceHolder ID="contenido" runat="server">
+
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
