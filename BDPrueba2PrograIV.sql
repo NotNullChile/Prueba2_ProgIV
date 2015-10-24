@@ -84,6 +84,10 @@ CONSTRAINT fk_equiposB_partidos FOREIGN KEY (equipoVisita) REFERENCES equipos (i
 CONSTRAINT fk_estadio_partidos  FOREIGN KEY (idEstadio) REFERENCES estadios (idEstadio)
 );
 
+/** Alter **/
+
+ALTER TABLE equipos ADD UNIQUE (rutDT);
+
 /** Usuarios **/
 
 INSERT INTO usuarios VALUES(19133111,'rick','Ricardo');
@@ -1233,8 +1237,9 @@ SELECT d.nombreDT AS 'Nombre DT'
 FROM DTs d INNER JOIN equipos e ON d.rutDT = e.rutDT
 WHERE e.nombreEquipo = 'Exception';
 
-select * from equipos;
+/** ID Equipo **/
 
+SELECT COUNT(idEquipo)+1 FROM equipos;
 
 
 

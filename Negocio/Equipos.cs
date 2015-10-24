@@ -4,27 +4,44 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Datos;
+using System.Data;
+using System.Data.SqlClient;
 namespace Negocio
 {
     [System.ComponentModel.DataObject]
     public class Equipos
     {
-        Datos.ClubExceptionTableAdapters.equiposTableAdapter equipo;
+        Datos.ClubExceptionTableAdapters.equiposTableAdapter equipoDatos;
 
         public Equipos()
         {
-            equipo = new Datos.ClubExceptionTableAdapters.equiposTableAdapter();
+            equipoDatos = new Datos.ClubExceptionTableAdapters.equiposTableAdapter();
         }
 
         [System.ComponentModel.DataObjectMethod(System.ComponentModel.DataObjectMethodType.Insert, true)]
         public int guardarEquipo(int idEquipo, string nombreEquipo, int idComuna, int rutDT, string division)
         {
-            return equipo.Insert(idEquipo, nombreEquipo, idComuna, rutDT, 0, division);
+            try
+            {
+                return equipoDatos.Insert(idEquipo, nombreEquipo, idComuna, rutDT, 0, division);
+            }
+            catch (SqlException e)
+            {
+                return e.Number;
+                
+            }
+            
         }
         [System.ComponentModel.DataObjectMethod(System.ComponentModel.DataObjectMethodType.Select, true)]
         public ClubException.equiposDataTable mostrarEquipo()
         {
-            return equipo.GetData();
+            return equipoDatos.GetData();
+        }
+        [System.ComponentModel.DataObjectMethod(System.ComponentModel.DataObjectMethodType.Select, false)]
+        public int idEquipo()
+        {
+            int res = int.Parse(equipoDatos.IdEquipo().ToString());
+            return res ;
         }
     }
 }
