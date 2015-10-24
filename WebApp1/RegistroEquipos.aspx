@@ -5,6 +5,71 @@
     Registro de Equipos
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contenido" runat="server">
+    <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" CellPadding="4" DataKeyNames="idEquipo" DataSourceID="DSEquipo" DefaultMode="Insert" ForeColor="#333333" GridLines="None" Height="50px" Width="125px">
+        <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+        <CommandRowStyle BackColor="#E2DED6" Font-Bold="True" />
+        <EditRowStyle BackColor="#999999" />
+        <FieldHeaderStyle BackColor="#E9ECF1" Font-Bold="True" />
+        <Fields>
+            <asp:BoundField DataField="idEquipo" HeaderText="idEquipo" ReadOnly="True" SortExpression="idEquipo" />
+            <asp:BoundField DataField="nombreEquipo" HeaderText="nombreEquipo" SortExpression="nombreEquipo" />
+            <asp:TemplateField HeaderText="idComuna" SortExpression="idComuna">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("idComuna") %>'></asp:TextBox>
+                </EditItemTemplate>
+                <InsertItemTemplate>
+                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="DSComuna" DataTextField="nombreComuna" DataValueField="idComuna" SelectedValue='<%# Bind("idComuna") %>'>
+                    </asp:DropDownList>
+                    <asp:ObjectDataSource ID="DSComuna" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="mostrarComunas" TypeName="Negocio.ComunasNegocio"></asp:ObjectDataSource>
+                </InsertItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("idComuna") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="rutDT" SortExpression="rutDT">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("rutDT") %>'></asp:TextBox>
+                </EditItemTemplate>
+                <InsertItemTemplate>
+                    <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="DSDT" DataTextField="nombreDT" DataValueField="rutDT" SelectedValue='<%# Bind("rutDT") %>'>
+                    </asp:DropDownList>
+                    <asp:ObjectDataSource ID="DSDT" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="mostrarDTs" TypeName="Negocio.DTsNegocio"></asp:ObjectDataSource>
+                </InsertItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label3" runat="server" Text='<%# Bind("rutDT") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="division" SortExpression="division">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("division") %>'></asp:TextBox>
+                </EditItemTemplate>
+                <InsertItemTemplate>
+                    <asp:DropDownList ID="DropDownList3" runat="server" SelectedValue='<%# Bind("division") %>'>
+                        <asp:ListItem>1A</asp:ListItem>
+                        <asp:ListItem>1B</asp:ListItem>
+                    </asp:DropDownList>
+                </InsertItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("division") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:CommandField ShowInsertButton="True" />
+        </Fields>
+        <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+    </asp:DetailsView>
+    <asp:ObjectDataSource ID="DSEquipo" runat="server" InsertMethod="guardarEquipo" OldValuesParameterFormatString="original_{0}" SelectMethod="mostrarEquipo" TypeName="Negocio.Equipos">
+        <InsertParameters>
+            <asp:Parameter Name="idEquipo" Type="Int32" />
+            <asp:Parameter Name="nombreEquipo" Type="String" />
+            <asp:Parameter Name="idComuna" Type="Int32" />
+            <asp:Parameter Name="rutDT" Type="Int32" />
+            <asp:Parameter Name="division" Type="String" />
+        </InsertParameters>
+    </asp:ObjectDataSource>
+    <br />
     Datos a registrar son:
     <br />Nombre Equipo (no se puede repetir) (no puede quedar vacío)
     <br />Comuna que representa (no puede quedar vacío)
