@@ -57,11 +57,42 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CSS\Basic.css" />
+    <Content Include="default.aspx" />
+    <Content Include="listadoequipos.aspx" />
+    <Content Include="obj\Debug\WebApp1.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\WebApp1.dll" />
+    <Content Include="obj\Debug\WebApp1.pdb" />
     <Content Include="pruebaHolaRicardo.aspx" />
     <Content Include="pruebaUsuarioRicardo.aspx" />
+    <Content Include="RegistroEquipos.aspx" />
+    <Content Include="registrogoleadores.aspx" />
+    <Content Include="registropartidos.aspx" />
+    <Content Include="reporteequipos.aspx" />
+    <Content Include="reportegoleadores.aspx" />
+    <Content Include="reportegoles.aspx" />
+    <Content Include="reportepartidos.aspx" />
+    <Content Include="reportetecnicos.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="listadoequipos.aspx.cs">
+      <DependentUpon>listadoequipos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="listadoequipos.aspx.designer.cs">
+      <DependentUpon>listadoequipos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="pruebaHolaRicardo.aspx.cs">
       <DependentUpon>pruebaHolaRicardo.aspx</DependentUpon>
@@ -77,20 +108,91 @@
     <Compile Include="pruebaUsuarioRicardo.aspx.designer.cs">
       <DependentUpon>pruebaUsuarioRicardo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="registroequipos.aspx.cs">
+      <DependentUpon>RegistroEquipos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="registroequipos.aspx.designer.cs">
+      <DependentUpon>RegistroEquipos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="registrogoleadores.aspx.cs">
+      <DependentUpon>registrogoleadores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="registrogoleadores.aspx.designer.cs">
+      <DependentUpon>registrogoleadores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="registropartidos.aspx.cs">
+      <DependentUpon>registropartidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="registropartidos.aspx.designer.cs">
+      <DependentUpon>registropartidos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporteequipos.aspx.cs">
+      <DependentUpon>reporteequipos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporteequipos.aspx.designer.cs">
+      <DependentUpon>reporteequipos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reportegoleadores.aspx.cs">
+      <DependentUpon>reportegoleadores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reportegoleadores.aspx.designer.cs">
+      <DependentUpon>reportegoleadores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reportegoles.aspx.cs">
+      <DependentUpon>reportegoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reportegoles.aspx.designer.cs">
+      <DependentUpon>reportegoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reportepartidos.aspx.cs">
+      <DependentUpon>reportepartidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reportepartidos.aspx.designer.cs">
+      <DependentUpon>reportepartidos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reportetecnicos.aspx.cs">
+      <DependentUpon>reportetecnicos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reportetecnicos.aspx.designer.cs">
+      <DependentUpon>reportetecnicos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Site1.Master" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\WebApp1.csprojResolveAssemblyReference.cache" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Negocio\Negocio.csproj">
       <Project>{fe66d9a5-5eda-42a5-97fe-fbe7ce7c8cb7}</Project>
       <Name>Negocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
