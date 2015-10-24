@@ -12,6 +12,7 @@
 <body >
     <form id="form1" runat="server">
     <div>
+    <a href="default.aspx">Inicio</a>
     <a href="RegistroEquipos.aspx">Mantenedor de Equipos</a><br />
     <a href="registropartidos.aspx">Mantenedor de Partidos</a><br />
     <a href="registrogoleadores.aspx">Mantenedor de Goleadores</a><br />
