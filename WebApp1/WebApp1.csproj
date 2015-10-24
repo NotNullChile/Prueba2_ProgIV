@@ -57,10 +57,26 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="pruebaHolaRicardo.aspx" />
+    <Content Include="pruebaUsuarioRicardo.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="pruebaHolaRicardo.aspx.cs">
+      <DependentUpon>pruebaHolaRicardo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pruebaHolaRicardo.aspx.designer.cs">
+      <DependentUpon>pruebaHolaRicardo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pruebaUsuarioRicardo.aspx.cs">
+      <DependentUpon>pruebaUsuarioRicardo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pruebaUsuarioRicardo.aspx.designer.cs">
+      <DependentUpon>pruebaUsuarioRicardo.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Web.Debug.config">
@@ -69,6 +85,12 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Negocio\Negocio.csproj">
+      <Project>{fe66d9a5-5eda-42a5-97fe-fbe7ce7c8cb7}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

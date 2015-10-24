@@ -5,34 +5,22 @@ using System.Text;
 using System.Threading.Tasks;
 using Datos;
 using System.Data;
-using System.Data.SqlClient;
 namespace Negocio
 {
     [System.ComponentModel.DataObject]
     public class UsuariosNegocio
     {
-        private int rut;
-        private string clave;
-        private int nombreUsuario;
+        Datos.ClubExceptionTableAdapters.usuariosTableAdapter usuario;
 
-        public int NombreUsuario
+        public UsuariosNegocio()
         {
-            get { return nombreUsuario; }
-            set { nombreUsuario = value; }
+            usuario = new Datos.ClubExceptionTableAdapters.usuariosTableAdapter();
         }
+        [System.ComponentModel.DataObjectMethod(System.ComponentModel.DataObjectMethodType.Select, true)]
 
-
-        public string Clave
+        public DataTable consultaMantenedor(int rutUsuario, string clave)
         {
-            get { return clave; }
-            set { clave = value; }
-        }
-
-
-        public int Rut
-        {
-            get { return rut; }
-            set { rut = value; }
+            return  usuario.consultaMantenedor(rutUsuario, clave);            
         }
 
     }
