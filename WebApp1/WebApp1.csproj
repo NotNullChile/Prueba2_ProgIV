@@ -59,7 +59,9 @@
   <ItemGroup>
     <Content Include="CSS\Basic.css" />
     <Content Include="default.aspx" />
+    <Content Include="images\logo-1.png" />
     <Content Include="listadoequipos.aspx" />
+    <Content Include="mantenedores.aspx" />
     <Content Include="obj\Debug\WebApp1.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\WebApp1.dll" />
     <Content Include="obj\Debug\WebApp1.pdb" />
@@ -72,6 +74,7 @@
     <Content Include="reportegoleadores.aspx" />
     <Content Include="reportegoles.aspx" />
     <Content Include="reportepartidos.aspx" />
+    <Content Include="reportes.aspx" />
     <Content Include="reportetecnicos.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -89,6 +92,13 @@
     </Compile>
     <Compile Include="listadoequipos.aspx.designer.cs">
       <DependentUpon>listadoequipos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mantenedores.aspx.cs">
+      <DependentUpon>mantenedores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mantenedores.aspx.designer.cs">
+      <DependentUpon>mantenedores.aspx</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
@@ -157,6 +167,13 @@
     <Compile Include="reportepartidos.aspx.designer.cs">
       <DependentUpon>reportepartidos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="reportes.aspx.cs">
+      <DependentUpon>reportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reportes.aspx.designer.cs">
+      <DependentUpon>reportes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="reportetecnicos.aspx.cs">
       <DependentUpon>reportetecnicos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -185,14 +202,13 @@
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="images\" />
-    <Folder Include="obj\Debug\TempPE\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Negocio\Negocio.csproj">
       <Project>{fe66d9a5-5eda-42a5-97fe-fbe7ce7c8cb7}</Project>
       <Name>Negocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,7 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
-    <siteMapNode url="" title=""  description="">
-        <siteMapNode url="" title=""  description="" />
-        <siteMapNode url="" title=""  description="" />
+    <siteMapNode url="default.aspx" title="Home"  description="">
+      <siteMapNode url="mantenedores.aspx" title="Registrar Información">
+        <siteMapNode url="RegistroEquipos.aspx" title="Registrar Equipos"  description="" />
+        <siteMapNode url="registropartidos.aspx" title="Registrar Partidos"  description="" />
+        <siteMapNode url="registrogoleadores.aspx" title="Registrar Goleadores"  description="" />              
+      </siteMapNode>
+      <siteMapNode url="reportes.aspx" title="Reportes de Información">
+        <siteMapNode url="reportegoles.aspx" title="Total Goles del Torneo"  description="" />
+        <siteMapNode url="reportepartidos.aspx" title="Partidos Jugados y sus Resultados"  description="" />
+        <siteMapNode url="listadoequipos.aspx" title="Listado de Todos los equipos"  description="" />              
+        <siteMapNode url="reporteequipos.aspx" title="Listado de Equipos y sus Puntajes"  description="" />
+        <siteMapNode url="reportegoleadores.aspx" title="Los 3 mejores jugadores del Torneo"  description="" />
+        <siteMapNode url="reportetecnicos.aspx" title="Ver el nombre del DT de un equipo"  description="" />
+      </siteMapNode>    
+      
+      
     </siteMapNode>
 </siteMap>
