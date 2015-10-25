@@ -193,6 +193,7 @@
     <Content Include="Site1.Master" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="obj\Debug\WebApp1.csprojResolveAssemblyReference.cache" />
+    <Content Include="map.sitemap" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

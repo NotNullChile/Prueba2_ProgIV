@@ -39,6 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClubException.cs">
+      <DependentUpon>ClubException.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ClubException.Designer.cs">
       <DependentUpon>ClubException.xsd</DependentUpon>
       <DesignTime>True</DesignTime>

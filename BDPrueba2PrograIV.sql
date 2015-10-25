@@ -84,6 +84,7 @@ CONSTRAINT fk_equiposB_partidos FOREIGN KEY (equipoVisita) REFERENCES equipos (i
 CONSTRAINT fk_estadio_partidos  FOREIGN KEY (idEstadio) REFERENCES estadios (idEstadio)
 );
 
+
 /** Alter **/
 
 ALTER TABLE equipos ADD UNIQUE (rutDT);
@@ -1203,18 +1204,21 @@ WHERE j.golesConvertidos > 0 AND e.division = '1A'
 ORDER BY j.golesConvertidos DESC;
 
 /** Partidos Jugados (V)**/
-SELECT p.fechaTorneo AS 'Fecha Torneo', CONCAT(eql.nombreEquipo , ' ' , p.golesLocal , ' V/S ' ,p.golesVisita , ' ' , eqv.nombreEquipo) AS 'Partido' , es.nombreEstadio AS 'Estadio', p.fechaPartido AS 'Fecha Partido', SUM(jel.golesConvertidos*100000) AS 'Total a pagar Equipo Local' , SUM(jev.golesConvertidos*100000) AS 'Total a pagar Equipo Visita'
+SELECT * FROM jugadores;
+INSERT INTO partidos VALUES(2,2,4,0,0,3,'2015-01-01',1);
+
+SELECT p.fechaTorneo AS 'Fecha Torneo', CONCAT(eql.nombreEquipo , ' ' , p.golesLocal , ' V/S ' ,p.golesVisita , ' ' , eqv.nombreEquipo) AS 'Partido' , es.nombreEstadio AS 'Estadio', p.fechaPartido AS 'Fecha Partido', SUM(p.golesLocal*100000) AS 'Total a pagar Equipo Local' , SUM(p.golesVisita*100000) AS 'Total a pagar Equipo Visita'
 FROM partidos p 
 	 INNER JOIN estadios es ON p.idEstadio = es.idEstadio
-	 INNER JOIN equipos eql ON p.golesLocal = eql.idEquipo
-	 INNER JOIN equipos eqv ON p.golesVisita = eqv.idEquipo
+	 INNER JOIN equipos eql ON p.equipoLocal = eql.idEquipo
+	 INNER JOIN equipos eqv ON p.equipoVisita = eqv.idEquipo
 	 INNER JOIN jugadores jel ON jel.idEquipo = eql.idEquipo
 	 INNER JOIN jugadores jev ON jev.idEquipo = eqv.idEquipo
-GROUP BY  p.fechaTorneo, eql.nombreEquipo, p.golesLocal, eqv.nombreEquipo, p.golesVisita, es.nombreEstadio, p.fechaPartido
+GROUP BY  p.fechaTorneo, eql.nombreEquipo, p.golesLocal, eqv.nombreEquipo, p.golesVisita, es.nombreEstadio, p.fechaPartido;
 
 /** Listado de Equipo (VI) **/
 
-SELECT e.idEquipo AS 'ID Equipo', e.nombreEquipo AS 'Equipo', d.nombreDT AS 'DT'
+SELECT e.idEquipo AS 'ID Equipo', e.nombreEquipo AS 'Equipo' , d.nombreDT AS 'DT'
 FROM equipos e INNER JOIN DTs d ON e.rutDT = d.rutDT
 WHERE e.division = '1A';
 
@@ -1229,7 +1233,8 @@ ORDER BY 2 DESC;
 
 SELECT TOP 3 j.nombreJugador AS 'Jugador', e.nombreEquipo AS 'Equipo', j.golesConvertidos AS 'Goles'
 FROM jugadores j INNER JOIN equipos e ON j.idEquipo = e.idEquipo
-WHERE j.golesConvertidos > 0  AND e.division = '1A' ;
+WHERE j.golesConvertidos > 0  AND e.division = '1A'  
+ORDER BY 3 DESC;
 
 /** Nombre DT (IX) **/
 
@@ -1241,7 +1246,29 @@ WHERE e.nombreEquipo = 'Exception';
 
 SELECT COUNT(idEquipo)+1 FROM equipos;
 
+/** ID Partidos **/
 
+SELECT COUNT(idPartido)+1 FROM partidos;
 
+/** Update goleadores **/
 
+UPDATE jugadores SET golesConvertidos = 1 WHERE rutJugador = 1;
+
+/** Consulta equipo jugador **/
+
+SELECT e.nombreEquipo FROM equipos e INNER JOIN jugadores j ON e.idEquipo = j.idEquipo
+WHERE j.rutJugador = 1;
+
+/** Consulta nombre jugador **/
+
+SELECT nombreJugador FROM jugadores  
+WHERE rutJugador = 1;
+
+/** Consulta Posicion **/
+SELECT p.descripcion FROM posicion p INNER JOIN jugadores j ON p.idPosicion = j.idPosicion
+WHERE j.rutJugador = 1;
+
+/** Update puntaje equipo Local **/
+
+UPDATE SET 
 
