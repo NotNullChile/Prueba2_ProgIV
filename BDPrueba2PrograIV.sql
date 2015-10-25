@@ -1207,15 +1207,15 @@ ORDER BY j.golesConvertidos DESC;
 SELECT * FROM jugadores;
 INSERT INTO partidos VALUES(2,2,4,0,0,3,'2015-01-01',1);
 
-SELECT p.fechaTorneo AS 'Fecha Torneo', CONCAT(eql.nombreEquipo , ' ' , p.golesLocal , ' V/S ' ,p.golesVisita , ' ' , eqv.nombreEquipo) AS 'Partido' , es.nombreEstadio AS 'Estadio', p.fechaPartido AS 'Fecha Partido', SUM(p.golesLocal*100000) AS 'Total a pagar Equipo Local' , SUM(p.golesVisita*100000) AS 'Total a pagar Equipo Visita'
+SELECT p.fechaTorneo AS 'Fecha Torneo', CONCAT(eql.nombreEquipo , ' ' , p.golesLocal , ' V/S ' ,p.golesVisita , ' ' , eqv.nombreEquipo) AS 'Partido' , es.nombreEstadio AS 'Estadio', p.fechaPartido AS 'Fecha Partido', (p.golesLocal*100000) AS 'Total a pagar Equipo Local' , (p.golesVisita*100000) AS 'Total a pagar Equipo Visita'
 FROM partidos p 
 	 INNER JOIN estadios es ON p.idEstadio = es.idEstadio
 	 INNER JOIN equipos eql ON p.equipoLocal = eql.idEquipo
 	 INNER JOIN equipos eqv ON p.equipoVisita = eqv.idEquipo
 	 INNER JOIN jugadores jel ON jel.idEquipo = eql.idEquipo
 	 INNER JOIN jugadores jev ON jev.idEquipo = eqv.idEquipo
-GROUP BY  p.fechaTorneo, eql.nombreEquipo, p.golesLocal, eqv.nombreEquipo, p.golesVisita, es.nombreEstadio, p.fechaPartido;
-
+GROUP BY  p.fechaTorneo, eql.nombreEquipo, p.golesLocal, eqv.nombreEquipo, p.golesVisita, es.nombreEstadio, p.fechaPartido
+ORDER BY p.fechaPartido;
 /** Listado de Equipo (VI) **/
 
 SELECT e.idEquipo AS 'ID Equipo', e.nombreEquipo AS 'Equipo' , d.nombreDT AS 'DT'
@@ -1251,8 +1251,8 @@ SELECT COUNT(idEquipo)+1 FROM equipos;
 SELECT COUNT(idPartido)+1 FROM partidos;
 
 /** Update goleadores **/
-
-UPDATE jugadores SET golesConvertidos = 1 WHERE rutJugador = 1;
+SELECT golesConvertidos FROM jugadores WHERE rutJugador = 1;
+UPDATE jugadores SET golesConvertidos = (SELECT golesConvertidos FROM jugadores WHERE rutJugador = 1) + 1 WHERE rutJugador = 1;
 
 /** Consulta equipo jugador **/
 
@@ -1268,7 +1268,11 @@ WHERE rutJugador = 1;
 SELECT p.descripcion FROM posicion p INNER JOIN jugadores j ON p.idPosicion = j.idPosicion
 WHERE j.rutJugador = 1;
 
-/** Update puntaje equipo Local **/
+/** Update puntaje equipo ganado **/
 
-UPDATE SET 
+UPDATE equipos SET puntaje = (SELECT puntaje FROM equipos WHERE idEquipo = 1) + 3 WHERE idEquipo = 1;
+
+/** Update puntaje equipo empate **/
+
+UPDATE equipos SET puntaje = (SELECT puntaje FROM equipos WHERE idEquipo = 1) + 1 WHERE idEquipo = 1;
 

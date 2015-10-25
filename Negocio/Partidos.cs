@@ -23,7 +23,28 @@ namespace Negocio
         {
             try
             {
-                return partidos.Insert(idPartido, equipoLocal, equipoVisita, golesLocal, golesVisita, idEstadio, fechaPartido, fechaTorneo);
+                int res = 0;
+
+                res = partidos.Insert(idPartido, equipoLocal, equipoVisita, golesLocal, golesVisita, idEstadio, fechaPartido, fechaTorneo);
+                
+                if (res == 1)
+                {
+                    if (golesLocal > golesVisita)
+                    {
+                        partidos.updateEquipoGanador(equipoLocal);
+                    }
+                    else if (golesLocal < golesVisita)
+                    {
+                        partidos.updateEquipoGanador(equipoVisita);
+                    }
+                    else if (golesLocal == golesVisita)
+                    {
+                        partidos.updateEquipoEmpate(equipoLocal);
+                        partidos.updateEquipoEmpate(equipoVisita);
+                    }
+                }
+
+                return res;
             }
             catch (SqlException e)
             {

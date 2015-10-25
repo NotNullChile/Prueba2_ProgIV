@@ -26,7 +26,7 @@
         <SortedDescendingCellStyle BackColor="#FFFDF8" />
         <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
     </asp:GridView>
-    <asp:ObjectDataSource ID="DSPartido" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="listadoPartido" TypeName="Datos.ClubExceptionTableAdapters.resultadoPartidosTableAdapter"></asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="DSPartido" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="listadosEquipos" TypeName="Datos.ClubExceptionTableAdapters.resultadosEquiposTableAdapter"></asp:ObjectDataSource>
     <br />
     <br />
     Contenidos:

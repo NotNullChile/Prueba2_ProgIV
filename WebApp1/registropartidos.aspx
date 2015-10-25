@@ -60,12 +60,12 @@
                     &nbsp;<asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="TextBox2" ErrorMessage="Debe ser 0 o mayor" ForeColor="Red" MaximumValue="100" MinimumValue="0"></asp:RangeValidator>
                 </EditItemTemplate>
                 <InsertItemTemplate>
-                    <asp:TextBox ID="txtLocal" runat="server" Text="0" TextMode="Number"></asp:TextBox>
+                    <asp:TextBox ID="txtLocal" runat="server" Text='<%# Bind("golesLocal") %>' TextMode="Number"></asp:TextBox>
                     &nbsp;<asp:RequiredFieldValidator ID="RFLocalIngrsar" runat="server" ControlToValidate="txtLocal" ErrorMessage="Debe Ingresar goles" ForeColor="Red"></asp:RequiredFieldValidator>
                     <asp:RangeValidator ID="RVLocal" runat="server" ControlToValidate="txtLocal" ErrorMessage="Debe ser 0 o mayor" ForeColor="Red" MaximumValue="100" MinimumValue="0" Type="Integer"></asp:RangeValidator>
                     <br />
                     &nbsp;&nbsp;&nbsp;&nbsp; V/S<br />
-                    <asp:TextBox ID="txtVisita" runat="server" Text="0" TextMode="Number" ValidationGroup="goles"></asp:TextBox>
+                    <asp:TextBox ID="txtVisita" runat="server" Text='<%# Bind("golesVisita") %>' TextMode="Number" ValidationGroup="goles"></asp:TextBox>
                     <asp:RangeValidator ID="RVVisita" runat="server" ControlToValidate="txtVisita" ErrorMessage="Debe ser 0 o mayor" ForeColor="Red" MaximumValue="100" MinimumValue="0" Type="Integer"></asp:RangeValidator>
                     <asp:RequiredFieldValidator ID="RVGolesVisita" runat="server" ControlToValidate="txtVisita" ErrorMessage="Debe Ingresar goles" ForeColor="Red"></asp:RequiredFieldValidator>
                 </InsertItemTemplate>
