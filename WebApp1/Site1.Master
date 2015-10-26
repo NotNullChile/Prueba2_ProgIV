@@ -12,10 +12,22 @@
 <body >
     <form id="form1" runat="server">
     <div>
-        <asp:Image ImageUrl="images/logo-1.png" runat="server" Height="126px" Width="138px" />
-        <br />
-        <br />
+        <div class="header">
+        <asp:Image ImageUrl="images/exception_logo.png" runat="server" Height="170px" Width="177px" />
+        </div>
         
+        <div class="map">
+        <asp:SiteMapDataSource id="nav1" runat="server" />
+        <asp:Menu runat="server" DataSourceId="nav1" BackColor="#FFFBD6" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#990000" StaticSubMenuIndent="10px" >
+            <DynamicHoverStyle BackColor="#990000" ForeColor="White" />
+            <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+            <DynamicMenuStyle BackColor="#FFFBD6" />
+            <DynamicSelectedStyle BackColor="#FFCC66" />
+            <StaticHoverStyle BackColor="#990000" ForeColor="White" />
+            <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+            <StaticSelectedStyle BackColor="#FFCC66" />
+        </asp:Menu>
+        </div>
 
     <!--a href="default.aspx">Inicio</!--a><br />
     <a href="RegistroEquipos.aspx">Mantenedor de Equipos</a><br />
@@ -28,9 +40,9 @@
     <a href="reportegoleadores.aspx">Los 3 mejores jugadores del Torneo</a><br />
     <a href="reportetecnicos.aspx">Ver el nombre del DT de un equipo</a><br /-->
     <p/>
-
+        <div class="page_title">
         <asp:ContentPlaceHolder ID="titulo" runat="server">
-        
+        </div>
         </asp:ContentPlaceHolder>
     </div>
     <div>

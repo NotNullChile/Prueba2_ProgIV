@@ -5,7 +5,16 @@
     Registros de Información
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contenido" runat="server">
-    <a href="RegistroEquipos.aspx">Mantenedor de Equipos</a><br />
+    <div class="reg-eq">
+        <asp:Image ImageUrl="~/images/team.png" runat="server" Height="80px" Width="80px" />
+        <a href="RegistroEquipos.aspx">Mantenedor de Equipos</a><br />
+    </div>
+    <div class="reg-eq">
+        <asp:Image ImageUrl="~/images/stadium.png" runat="server" Height="80px" Width="80px" />
     <a href="registropartidos.aspx">Mantenedor de Partidos</a><br />
+        </div>
+    <div class="reg-eq">
+        <asp:Image ImageUrl="~/images/goal.png" runat="server" Height="80px" Width="80px" />
     <a href="registrogoleadores.aspx">Mantenedor de Goleadores</a><br />
+        </div>
 </asp:Content>

@@ -5,8 +5,7 @@
     Listado de Todos los Partidos jugados y sus resultados
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contenido" runat="server">
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="DSPartido" ForeColor="#333333" GridLines="None">
-        <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="3" DataSourceID="DSPartido" GridLines="None" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellSpacing="1" Font-Names="Verdana" Width="98%">
         <Columns>
             <asp:BoundField DataField="Fecha Torneo" HeaderText="Fecha Torneo" SortExpression="Fecha Torneo" />
             <asp:BoundField DataField="Partido" HeaderText="Partido" ReadOnly="True" SortExpression="Partido" />
@@ -15,16 +14,15 @@
             <asp:BoundField DataField="Total a pagar Equipo Local" HeaderText="Total a pagar Equipo Local" ReadOnly="True" SortExpression="Total a pagar Equipo Local" />
             <asp:BoundField DataField="Total a pagar Equipo Visita" HeaderText="Total a pagar Equipo Visita" ReadOnly="True" SortExpression="Total a pagar Equipo Visita" />
         </Columns>
-        <EditRowStyle BackColor="#999999" />
-        <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-        <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-        <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-        <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
-        <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
-        <SortedAscendingCellStyle BackColor="#E9E7E2" />
-        <SortedAscendingHeaderStyle BackColor="#506C8C" />
-        <SortedDescendingCellStyle BackColor="#FFFDF8" />
-        <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+        <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
+        <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#E7E7FF" />
+        <PagerStyle BackColor="#C6C3C6" ForeColor="Black" HorizontalAlign="Right" />
+        <RowStyle BackColor="#DEDFDE" ForeColor="Black" />
+        <SelectedRowStyle BackColor="#9471DE" Font-Bold="True" ForeColor="White" />
+        <SortedAscendingCellStyle BackColor="#F1F1F1" />
+        <SortedAscendingHeaderStyle BackColor="#594B9C" />
+        <SortedDescendingCellStyle BackColor="#CAC9C9" />
+        <SortedDescendingHeaderStyle BackColor="#33276A" />
     </asp:GridView>
     <asp:ObjectDataSource ID="DSPartido" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="listadosEquipos" TypeName="Datos.ClubExceptionTableAdapters.resultadosEquiposTableAdapter"></asp:ObjectDataSource>
     <br />

@@ -5,7 +5,8 @@
     Registro de Partidos y Resultados
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contenido" runat="server">
-    <asp:DetailsView ID="DVPartidos" runat="server" AutoGenerateRows="False" DataKeyNames="idPartido" DataSourceID="DSPartido" DefaultMode="Insert" Height="50px" Width="375px">
+    <asp:DetailsView ID="DVPartidos" runat="server" AutoGenerateRows="False" DataKeyNames="idPartido" DataSourceID="DSPartido" DefaultMode="Insert" Height="127px" Width="98%" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellPadding="3" GridLines="None" CellSpacing="1" Font-Names="Verdana" >
+        <EditRowStyle BackColor="#9471DE" Font-Bold="True" ForeColor="White" />
         <Fields>
             <asp:TemplateField HeaderText="Número Partido" SortExpression="idPartido">
                 <EditItemTemplate>
@@ -127,6 +128,10 @@
             </asp:TemplateField>
             <asp:CommandField ShowInsertButton="True" />
         </Fields>
+        <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
+        <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#E7E7FF" />
+        <PagerStyle BackColor="#C6C3C6" ForeColor="Black" HorizontalAlign="Right" />
+        <RowStyle BackColor="#DEDFDE" ForeColor="Black" />
     </asp:DetailsView>
     <asp:ObjectDataSource ID="DSPartido" runat="server" InsertMethod="guardarPartido" OldValuesParameterFormatString="original_{0}" SelectMethod="mostrarPartidos" TypeName="Negocio.Partidos">
         <InsertParameters>
