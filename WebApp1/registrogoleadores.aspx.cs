@@ -12,6 +12,10 @@ namespace WebApp1
         Jugadores jugadores = new Jugadores();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Mantenedor"] == null)
+            {
+                Response.Redirect("default.aspx");
+            }
 
         }
 

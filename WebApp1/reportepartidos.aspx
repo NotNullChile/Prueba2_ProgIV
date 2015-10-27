@@ -2,10 +2,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
+    <asp:Image ImageUrl="~/images/score.png" runat="server" Width="25" Height="25"/>
     Listado de Todos los Partidos jugados y sus resultados
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contenido" runat="server">
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="3" DataSourceID="DSPartido" GridLines="None" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellSpacing="1" Font-Names="Verdana" Width="98%">
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="3" DataSourceID="DSPartido" GridLines="None" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellSpacing="1" Font-Names="Segoe UI" Width="98%">
         <Columns>
             <asp:BoundField DataField="Fecha Torneo" HeaderText="Fecha Torneo" SortExpression="Fecha Torneo" />
             <asp:BoundField DataField="Partido" HeaderText="Partido" ReadOnly="True" SortExpression="Partido" />

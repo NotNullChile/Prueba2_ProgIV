@@ -2,10 +2,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
+    <asp:Image ImageUrl="~/images/team.png" runat="server" Width="25" Height="25"/>
     Registro de Equipos
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contenido" runat="server">
-    <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" CellPadding="3" DataKeyNames="idEquipo" DataSourceID="DSEquipo" DefaultMode="Insert" GridLines="None" Height="50px" Width="98%" OnItemInserting="DetailsView1_ItemInserting" OnItemInserted="DetailsView1_ItemInserted" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellSpacing="1" Font-Names="Verdana">
+    <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" CellPadding="3" DataKeyNames="idEquipo" DataSourceID="DSEquipo" DefaultMode="Insert" GridLines="None" Height="50px" Width="98%" OnItemInserting="DetailsView1_ItemInserting" OnItemInserted="DetailsView1_ItemInserted" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellSpacing="1" Font-Names="Segoe UI">
         <EditRowStyle BackColor="#9471DE" Font-Bold="True" ForeColor="White" />
         <Fields>
             <asp:TemplateField HeaderText="Número Equipo" SortExpression="idEquipo">

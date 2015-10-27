@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
+    <asp:Image ImageUrl="~/images/coach.png" runat="server" Width="25" Height="25"/>
     Reporte Directores Técnicos
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contenido" runat="server">
@@ -17,7 +18,7 @@
         </InsertParameters>
     </asp:ObjectDataSource>
     <br />
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="3" DataSourceID="DSTecnico" GridLines="None" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellSpacing="1" Font-Names="Verdana" Width="98%">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="3" DataSourceID="DSTecnico" GridLines="None" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellSpacing="1" Font-Names="Segoe UI" Width="98%">
         <Columns>
             <asp:BoundField DataField="Nombre DT" HeaderText="Nombre DT" SortExpression="Nombre DT" />
         </Columns>

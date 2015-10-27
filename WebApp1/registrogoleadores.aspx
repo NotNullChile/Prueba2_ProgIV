@@ -2,10 +2,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
-    Registro Goleadores
+    <asp:Image ImageUrl="~/images/goal.png" runat="server" Width="25" Height="25"/>
+    Registro de Goleadores
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contenido" runat="server">
-    <asp:DetailsView ID="DVGoles" runat="server" AutoGenerateRows="False" CellPadding="3" DataKeyNames="rutJugador" DataSourceID="DSJugador" DefaultMode="Edit" GridLines="None" Height="50px" Width="98%" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellSpacing="1" Font-Names="Verdana">
+    <asp:DetailsView ID="DVGoles" runat="server" AutoGenerateRows="False" CellPadding="3" DataKeyNames="rutJugador" DataSourceID="DSJugador" DefaultMode="Edit" GridLines="None" Height="50px" Width="98%" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellSpacing="1" Font-Names="Segoe UI">
         <EditRowStyle BackColor="#9471DE" Font-Bold="True" ForeColor="White" />
         <Fields>
             <asp:TemplateField HeaderText="rutJugador" SortExpression="rutJugador">

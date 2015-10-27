@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
+    <asp:Image ImageUrl="~/images/podium.png" runat="server" Width="25" Height="25"/>
     Reporte Goleadores
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contenido" runat="server">
@@ -11,7 +12,7 @@
     </asp:DropDownList>
     <br />
     <br />
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="3" DataSourceID="DSMejoresJugadores" GridLines="None" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellSpacing="1" Font-Names="Verdana" Width="98%">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="3" DataSourceID="DSMejoresJugadores" GridLines="None" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellSpacing="1" Font-Names="Segoe UI" Width="98%">
         <Columns>
             <asp:BoundField DataField="Jugador" HeaderText="Jugador" SortExpression="Jugador" />
             <asp:BoundField DataField="Equipo" HeaderText="Equipo" SortExpression="Equipo" />

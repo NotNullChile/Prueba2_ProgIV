@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
+    <asp:Image ImageUrl="~/images/list.png" runat="server" Width="25" Height="25"/>
     Listado de Todos los Equipos
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contenido" runat="server">
@@ -10,7 +11,7 @@
         <asp:ListItem>1B</asp:ListItem>
     </asp:DropDownList>
     <br />
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="3" DataKeyNames="IDEquipo" DataSourceID="DSEquipos" GridLines="None" PageSize="20" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellSpacing="1" Font-Names="Verdana" Width="98%">
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="3" DataKeyNames="IDEquipo" DataSourceID="DSEquipos" GridLines="None" PageSize="20" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellSpacing="1" Font-Names="Segoe UI" Width="98%">
         <Columns>
             <asp:BoundField DataField="IDEquipo" HeaderText="IDEquipo" ReadOnly="True" SortExpression="IDEquipo" />
             <asp:BoundField DataField="Equipo" HeaderText="Equipo" SortExpression="Equipo" />
