@@ -16,16 +16,19 @@
 }
 
 .page_title {
-    background-color: red;
+    background-color: whitesmoke;
     padding: 10px;
     color: black;
     font-size:large;
+    border-radius: 25px;
+    width: 95%;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .reg-eq{
     background-color: azure;
     padding: 10px;
+    border-radius: 25px;
 }
 
 .logo{
@@ -34,7 +37,7 @@
 .loginbox {
     top:5%;
     right:-20%;
-    width: 45%;
+    width: 55%;
     position:absolute;
     background-color: navy;
     padding:20px;
