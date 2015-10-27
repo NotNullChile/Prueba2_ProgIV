@@ -12,6 +12,10 @@ namespace WebApp1
         Partidos partidos = new Partidos();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Mantenedor"] == null)
+            {
+                Response.Redirect("default.aspx");
+            }
             TextBox txtIdPartido = (TextBox)DVPartidos.FindControl("txtIdPartido");
             txtIdPartido.Text = partidos.idPartido().ToString();
         }

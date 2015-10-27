@@ -23,12 +23,13 @@
         <div class="header">
             <div class="loginbox">
 
-                <asp:TextBox ID="txt_username" runat="server" Width="228px"></asp:TextBox>
+                <asp:TextBox ID="txtUsername" runat="server" Width="228px"></asp:TextBox>
                 <br />
                 <br />
-                <input id="txt_password" type="password" /><br />
+                <asp:TextBox ID="txtPassword" runat="server" Width="232px"></asp:TextBox>
                 <br />
-                <asp:Button ID="btn_login" runat="server" Text="Iniciar Sesión" />
+                <br />
+                <asp:Button ID="btn_login" runat="server" Text="Iniciar Sesión" OnClick="btn_login_Click" />
                 <br />
 
             </div>

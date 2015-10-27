@@ -13,6 +13,10 @@ namespace WebApp1
         Equipos equipo = new Equipos();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Mantenedor"] == null)
+            {
+                Response.Redirect("default.aspx");
+            }
             TextBox txtIdEquipo = (TextBox)DetailsView1.FindControl("txtIdEquipo");
             txtIdEquipo.Text = equipo.idEquipo().ToString();
 
