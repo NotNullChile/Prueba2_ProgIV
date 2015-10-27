@@ -26,13 +26,13 @@
                     <div class="texto_blanco">
                 <asp:Label ID="lblUsername" Text="Ingrese sus credenciales" runat="server" />
                     
-                        :<br />
-                <asp:Label Text=" Usuario " runat="server" /><asp:TextBox ID="txtUsername" runat="server" Width="232px"></asp:TextBox>
+                         <br />
+                <asp:Label Text=" Usuario " runat="server" ID="lblUsuario" /><asp:TextBox ID="txtUsername" runat="server" Width="232px"></asp:TextBox>
                 <br />
-                <asp:Label Text="Password" runat="server" /><asp:TextBox ID="txtPassword" runat="server" Width="232px"></asp:TextBox>
+                <asp:Label Text="Password" runat="server" ID="lblPassword" /><asp:TextBox ID="txtPassword" runat="server" Width="232px" TextMode="Password"></asp:TextBox>
                 <br />
                 <asp:Button ID="btn_login" runat="server" Text="Iniciar Sesión" OnClick="btn_login_Click" />
-                <asp:Button ID="btn_logout" Text="Cerrar Sesión" runat="server" Visible="false" />
+                <asp:Button ID="btn_logout" Text="Cerrar Sesión" runat="server" Visible="false" OnClick="btn_logout_Click" />
                 <br />
                 </div>
             </div>
