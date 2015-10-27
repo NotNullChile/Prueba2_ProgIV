@@ -85,7 +85,7 @@
     <Content Include="pruebaUsuarioRicardo.aspx" />
     <Content Include="RegistroEquipos.aspx" />
     <Content Include="registrogoleadores.aspx" />
-    <Content Include="registropartidos_2.aspx" />
+    <Content Include="registropartidos.aspx" />
     <Content Include="registrotecnico.aspx" />
     <Content Include="reporteequipos.aspx" />
     <Content Include="reportegoleadores.aspx" />
@@ -149,12 +149,12 @@
     <Compile Include="registrogoleadores.aspx.designer.cs">
       <DependentUpon>registrogoleadores.aspx</DependentUpon>
     </Compile>
-    <Compile Include="registropartidos_2.aspx.cs">
-      <DependentUpon>registropartidos_2.aspx</DependentUpon>
+    <Compile Include="registropartidos.aspx.cs">
+      <DependentUpon>registropartidos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="registropartidos_2.aspx.designer.cs">
-      <DependentUpon>registropartidos_2.aspx</DependentUpon>
+    <Compile Include="registropartidos.aspx.designer.cs">
+      <DependentUpon>registropartidos.aspx</DependentUpon>
     </Compile>
     <Compile Include="registrotecnico.aspx.cs">
       <DependentUpon>registrotecnico.aspx</DependentUpon>
