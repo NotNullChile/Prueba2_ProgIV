@@ -5,5 +5,11 @@
     Index
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contenido" runat="server">
-    
+    <a href="RegistroEquipos.aspx">
+    <div class="cuadrado">
+        <asp:Image ImageUrl="~/images/team.png" runat="server" Width="100px" Height="100px" />
+        <br />
+        Registrar Equipos
+    </div>
+        </a>
 </asp:Content>
