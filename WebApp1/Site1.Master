@@ -8,12 +8,34 @@
     <link rel="stylesheet" type="text/css" href="CSS/basic.css"/>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <style type="text/css">
+        #Password1 {
+            width: 227px;
+        }
+        #txt_password {
+            width: 226px;
+        }
+    </style>
 </head>
 <body >
     <form id="form1" runat="server">
     <div>
         <div class="header">
-        <asp:Image ImageUrl="images/exception_logo.png" runat="server" Height="170px" Width="177px" />
+            <div class="loginbox">
+
+                <asp:TextBox ID="txt_username" runat="server" Width="228px"></asp:TextBox>
+                <br />
+                <br />
+                <input id="txt_password" type="password" /><br />
+                <br />
+                <asp:Button ID="btn_login" runat="server" Text="Iniciar Sesión" />
+                <br />
+
+            </div>
+            <div class="logo">
+                <asp:Image ImageUrl="images/exception_logo.png" runat="server" Height="170px" Width="177px" />
+            </div>
+            
         </div>
         
         <div class="map">
