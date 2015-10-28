@@ -97,38 +97,35 @@
         </UpdateParameters>
     </asp:ObjectDataSource>
     <br />
-    Equipos:&nbsp;
-    <asp:DropDownList ID="DropDownList3" runat="server" AutoPostBack="True" DataSourceID="DSEquiposView" DataTextField="nombreEquipo" DataValueField="nombreEquipo">
-    </asp:DropDownList>
-    <asp:ObjectDataSource ID="DSEquiposView" runat="server" DeleteMethod="borrarEquipo" InsertMethod="guardarEquipo" OldValuesParameterFormatString="original_{0}" SelectMethod="mostrarEquipo" TypeName="Negocio.Equipos" UpdateMethod="modificarEquipo">
-        <DeleteParameters>
-            <asp:Parameter Name="idEquipo" Type="Int32" />
-            <asp:Parameter Name="original_idEquipo" Type="Int32" />
-        </DeleteParameters>
-        <InsertParameters>
-            <asp:Parameter Name="idEquipo" Type="Int32" />
-            <asp:Parameter Name="nombreEquipo" Type="String" />
-            <asp:Parameter Name="idComuna" Type="Int32" />
-            <asp:Parameter Name="rutDT" Type="Int32" />
-            <asp:Parameter Name="division" Type="String" />
-        </InsertParameters>
-        <UpdateParameters>
-            <asp:Parameter Name="nombreEquipo" Type="String" />
-            <asp:Parameter Name="idComuna" Type="Int32" />
-            <asp:Parameter Name="rutDT" Type="Int32" />
-            <asp:Parameter Name="division" Type="String" />
-            <asp:Parameter Name="original_idEquipo" Type="Int32" />
-        </UpdateParameters>
-    </asp:ObjectDataSource>
     <br />
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellPadding="3" CellSpacing="1" DataKeyNames="rutJugador" DataSourceID="DSJugadorView" GridLines="None" style="margin-right: 0px">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellPadding="3" CellSpacing="1" DataKeyNames="rutJugador" DataSourceID="DSJugadorView" GridLines="None" style="margin-right: 0px" AllowPaging="True" PageSize="20">
         <Columns>
-            <asp:BoundField DataField="rutJugador" HeaderText="rutJugador" ReadOnly="True" SortExpression="rutJugador" />
-            <asp:BoundField DataField="nombreJugador" HeaderText="nombreJugador" SortExpression="nombreJugador" />
-            <asp:BoundField DataField="edad" HeaderText="edad" SortExpression="edad" />
-            <asp:BoundField DataField="nombreEquipo" HeaderText="nombreEquipo" SortExpression="nombreEquipo" />
-            <asp:BoundField DataField="golesConvertidos" HeaderText="golesConvertidos" SortExpression="golesConvertidos" />
-            <asp:BoundField DataField="descripcion" HeaderText="descripcion" SortExpression="descripcion" />
+            <asp:TemplateField HeaderText="RUT" SortExpression="rutJugador">
+                <EditItemTemplate>
+                    <asp:Label ID="Label1" runat="server" Text='<%# Eval("rutJugador") %>'></asp:Label>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("rutJugador") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Nombre" SortExpression="nombreJugador">
+                <EditItemTemplate>
+                    <asp:Label ID="Label5" runat="server" Text='<%# Eval("nombreJugador") %>'></asp:Label>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("nombreJugador") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Goles Convertidos" SortExpression="golesConvertidos">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("golesConvertidos") %>' TextMode="Number" ValidationGroup="view"></asp:TextBox>
+                    <asp:RangeValidator ID="RangeValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="Debe ser 0 o mayor" ForeColor="Red" MaximumValue="3000" MinimumValue="0" Type="Integer" ValidationGroup="view"></asp:RangeValidator>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label3" runat="server" Text='<%# Bind("golesConvertidos") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:CommandField ShowEditButton="True" />
         </Columns>
         <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
         <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#E7E7FF" />
@@ -140,10 +137,22 @@
         <SortedDescendingCellStyle BackColor="#CAC9C9" />
         <SortedDescendingHeaderStyle BackColor="#33276A" />
     </asp:GridView>
-    <asp:ObjectDataSource ID="DSJugadorView" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="filtroJugador" TypeName="Datos.ClubExceptionTableAdapters.filtroJugadorTableAdapter">
-        <SelectParameters>
-            <asp:ControlParameter ControlID="DropDownList3" Name="nombreEquipo" PropertyName="SelectedValue" Type="String" />
-        </SelectParameters>
+    <asp:ObjectDataSource ID="DSJugadorView" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="mostrarJugadores" TypeName="Negocio.Jugadores" DeleteMethod="borrarJugador" InsertMethod="guardarJugador" UpdateMethod="modificarGoles">
+        <DeleteParameters>
+            <asp:Parameter Name="Original_rutJugador" Type="Int32" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="rutJugador" Type="Int32" />
+            <asp:Parameter Name="nombreJugador" Type="String" />
+            <asp:Parameter Name="edad" Type="Int32" />
+            <asp:Parameter Name="idEquipo" Type="Int32" />
+            <asp:Parameter Name="idPosicion" Type="Int32" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="goles" Type="Int32" />
+            <asp:Parameter Name="golesConvertidos" Type="Int32" />
+            <asp:Parameter Name="original_rutJugador" Type="Int32" />
+        </UpdateParameters>
     </asp:ObjectDataSource>
     <br />
     <br />

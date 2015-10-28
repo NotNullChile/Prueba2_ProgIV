@@ -52,6 +52,15 @@ namespace Negocio
             }
         }
 
+        [System.ComponentModel.DataObjectMethod(System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public int mostrarPartidos()
+        {
+            return 1;
+        }
+
+
+
+
         [System.ComponentModel.DataObjectMethod(System.ComponentModel.DataObjectMethodType.Select, true)]
         public ClubException.partidosDataTable mostrarPartidos()
         {
