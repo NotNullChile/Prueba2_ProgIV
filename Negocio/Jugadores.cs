@@ -56,12 +56,11 @@ namespace Negocio
         }
 
         [System.ComponentModel.DataObjectMethod(System.ComponentModel.DataObjectMethodType.Update, false)]
-        public int modificarGoles(int goles, int rutJugador, int golesConvertidos, int original_rutJugador)
+        public int modificarGoles(int goles, int golesConvertidos, int original_rutJugador)
         {
             try
             {
-                //return jugadores.Update(golesConvertidos, rutJugador);
-                return 0;
+                return jugadores.updateGolesConvertidosView(golesConvertidos, original_rutJugador);
             }
             catch (SqlException e)
             {

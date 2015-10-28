@@ -1276,3 +1276,9 @@ UPDATE equipos SET puntaje = (SELECT puntaje FROM equipos WHERE idEquipo = 1) + 
 
 UPDATE equipos SET puntaje = (SELECT puntaje FROM equipos WHERE idEquipo = 1) + 1 WHERE idEquipo = 1;
 
+/** Consulta de jugadores **/
+
+SELECT j.rutJugador, j.nombreJugador, j.edad, e.nombreEquipo, j.golesConvertidos, p.descripcion
+FROM jugadores j INNER JOIN equipos e ON j.idEquipo = e.idEquipo INNER JOIN posicion p
+ON j.idPosicion = p.idPosicion 
+WHERE e.nombreEquipo = 'Colo-Colo';

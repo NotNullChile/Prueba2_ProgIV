@@ -45,5 +45,10 @@ namespace WebApp1
             int totalGanancia = goles * 100000;
             txtGanancia.Text = totalGanancia.ToString();
         }
+
+        protected void DVGoles_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
+        {
+
+        }
     }
 }

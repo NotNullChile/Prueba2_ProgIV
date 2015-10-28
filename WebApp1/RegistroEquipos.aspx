@@ -10,7 +10,8 @@
     Registro de Equipos
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contenido" runat="server">
-    <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" CellPadding="3" DataKeyNames="idEquipo" DataSourceID="DSEquipo" DefaultMode="Insert" GridLines="None" Height="50px" Width="98%" OnItemInserting="DetailsView1_ItemInserting" OnItemInserted="DetailsView1_ItemInserted" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellSpacing="1" Font-Names="Segoe UI">
+    <br />
+    <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" CellPadding="3" DataKeyNames="idEquipo" DataSourceID="DSEquipo" DefaultMode="Insert" GridLines="None" Height="50px" Width="98%" OnItemInserting="DetailsView1_ItemInserting" OnItemInserted="DetailsView1_ItemInserted" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellSpacing="1" Font-Names="Segoe UI" OnPageIndexChanging="DetailsView1_PageIndexChanging">
         <EditRowStyle BackColor="#9471DE" Font-Bold="True" ForeColor="White" />
         <Fields>
             <asp:TemplateField HeaderText="Número Equipo" SortExpression="idEquipo">
