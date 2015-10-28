@@ -32,6 +32,34 @@ namespace Negocio
             }
             
         }
+        [System.ComponentModel.DataObjectMethod(System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public int borrarEquipo(int idEquipo, int original_idEquipo)
+        {
+            try
+            {
+                return equipoDatos.Delete(original_idEquipo);
+            }
+            catch (SqlException e)
+            {
+                return e.Number;
+
+            }
+
+        }
+        [System.ComponentModel.DataObjectMethod(System.ComponentModel.DataObjectMethodType.Update, true)]
+        public int modificarEquipo(string nombreEquipo, int idComuna, int  rutDT, string division, int original_idEquipo)
+        {
+            try
+            {
+                return equipoDatos.Update(nombreEquipo, idComuna, rutDT, 0, division, original_idEquipo, original_idEquipo);
+            }
+            catch (SqlException e)
+            {
+                return e.Number;
+
+            }
+
+        }
         [System.ComponentModel.DataObjectMethod(System.ComponentModel.DataObjectMethodType.Select, true)]
         public ClubException.equiposDataTable mostrarEquipo()
         {

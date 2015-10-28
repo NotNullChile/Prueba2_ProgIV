@@ -55,6 +55,20 @@ namespace Negocio
             }
         }
 
+        [System.ComponentModel.DataObjectMethod(System.ComponentModel.DataObjectMethodType.Update, false)]
+        public int modificarGoles(int goles, int rutJugador, int golesConvertidos, int original_rutJugador)
+        {
+            try
+            {
+                //return jugadores.Update(golesConvertidos, rutJugador);
+                return 0;
+            }
+            catch (SqlException e)
+            {
+                return e.Number;
+            }
+        }
+
         [System.ComponentModel.DataObjectMethod(System.ComponentModel.DataObjectMethodType.Select, true)]
         public ClubException.jugadoresDataTable mostrarJugadores()
         {

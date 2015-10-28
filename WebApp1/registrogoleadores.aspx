@@ -92,11 +92,6 @@
         </UpdateParameters>
     </asp:ObjectDataSource>
     <br />
-    Datos a registrar:
-    <br />Rut(validar)
-    <br />Equipo perteneciente (dropdownlist)
-    <br />Cantida de Goles(número no negativo)
-    <br />Ganancia (100000 x gol)
 
 
 </asp:Content>
