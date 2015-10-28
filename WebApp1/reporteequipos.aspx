@@ -2,10 +2,17 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
-    <asp:Image ImageUrl="~/images/list_numbers.png" runat="server" Width="25" Height="25"/>
+    <div class="cuadrado-2" style="background-color:orangered">
+            <asp:HyperLink NavigateUrl="~/reporteequipos.aspx" runat="server" Font-Underline="false" CssClass="linkbutton">
+            <asp:Image ImageUrl="~/images/list_numbers.png" runat="server" Width="80px" Height="80px" />
+            </asp:HyperLink>
+    </div>
     Reporte de equipos y puntaje total.
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contenido" runat="server">
+    <br />
+    <br />
+    <div style="font-family:'Segoe UI'; font-size:medium; color:white">Seleccione División: </div>
     <asp:DropDownList ID="DDLDivision" runat="server" AutoPostBack="True" Height="28px" Width="79px">
         <asp:ListItem>1A</asp:ListItem>
         <asp:ListItem>1B</asp:ListItem>

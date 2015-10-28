@@ -2,7 +2,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
-    <asp:Image ImageUrl="~/images/score.png" runat="server" Width="25" Height="25"/>
+    <div class="cuadrado-2" style="background-color:maroon">
+            <asp:HyperLink NavigateUrl="~/reportepartidos.aspx" runat="server" Font-Underline="false" CssClass="linkbutton">
+            <asp:Image ImageUrl="~/images/score.png" runat="server" Width="80px" Height="80px" />
+            </asp:HyperLink>
+    </div>
     Listado de Todos los Partidos jugados y sus resultados
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contenido" runat="server">

@@ -2,11 +2,17 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
-    <asp:Image ImageUrl="~/images/coach.png" runat="server" Width="25" Height="25"/>
-    Registro de Directores Técnicos
+    <div class="cuadrado-2" style="background-color:green">
+            <asp:HyperLink NavigateUrl="~/registrotecnico.aspx" runat="server" Font-Underline="false" CssClass="linkbutton">
+            <asp:Image ImageUrl="~/images/coach.png" runat="server" Width="80px" Height="80px" />
+            </asp:HyperLink>
+        </div>
+    Registro de Directores Técnicos<br />
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="contenido" runat="server">
+    <br />
+    <br />  
     <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellPadding="3" CellSpacing="1" DataKeyNames="rutDT" DataSourceID="DSDTs" DefaultMode="Insert" GridLines="None" Height="50px" OnItemInserted="DetailsView1_ItemInserted" style="margin-right: 0px" Width="194px">
         <EditRowStyle BackColor="#9471DE" Font-Bold="True" ForeColor="White" />
         <Fields>

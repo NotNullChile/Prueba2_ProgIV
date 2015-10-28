@@ -1,8 +1,13 @@
 ﻿body {
     //background-color: lawngreen;
     background-image: url('../images/bg_3.jpg');
+    background-size:cover;
     background-repeat: no-repeat;
     //background-attachment: fixed;
+}
+
+a.cuadrado-1.link {
+    color:white;
 }
 
 .map {
@@ -17,11 +22,14 @@
 }
 
 .page_title {
-    background-color: whitesmoke;
-    padding: 10px;
-    color: black;
-    font-size:large;
-    border-radius: 25px;
+    //background-color: whitesmoke;
+    //padding: 10px;
+    padding-left:10px;
+    padding-right:10px;
+   
+    color: whitesmoke;
+    font-size:xx-large;
+    //border-radius: 25px;
     width: 95%;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -41,12 +49,12 @@
 
 
 .logo{
-    width:20%;
+    width:50%;
 }
 .loginbox {
     top:5%;
-    right:-20%;
-    width: 55%;
+    right: 0%;
+    width: 30%;
     position:absolute;
     background-color: navy;
     padding:20px;
@@ -57,30 +65,95 @@
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+a.linkbutton, a.linkbutton:visited, a.linkbutton img
+{
+    border: none;
+    outline: none;
+    color:white;
+    font-size:x-small;
+
+}
+
+.container-1 {
+    padding: 40px;
+    color:white;
+    font-family:'Segoe WP SemiLight';
+    font-size:large;
+    width: 300px;
+    float:left;
+}
+
+.container-2 {
+    padding: 40px;
+    color:white;
+    font-family:'Segoe WP SemiLight';
+    font-size:large;
+    width: 450px;
+    //margin-left: 400px;
+    //margin-top: -200px;
+    float:left;
+}
+
+.container-3 {
+    padding: 40px;
+    color:white;
+    font-family:'Segoe WP SemiLight';
+    font-size:large;
+    width: 1000px;
+    float:left;
+}
 .cuadrado-1 {
-    width: 150px;
-    height: 150px;
-    background-color:yellow;
-    position:relative;
+    width: 120px;
+    height: 120px;
     padding:10px;
-    top:60%;
-    left:3%;
     font-family:'Segoe UI';
-    color:whitesmoke;
     text-align:center;
     text-decoration:none;
+    margin:auto;
+    float:left;
+    margin-top: 10px;
+    margin-left:10px;
 }
 
 .cuadrado-2 {
-    width: 150px;
-    height: 150px;
-    background-color:pink;
-    position:absolute;
-    padding:10px;
-    top:38.8%;
-    left:14%;
+    width: 80px;
+    height: 80px;
+    //padding-right:10px;
     font-family:'Segoe UI';
-    color:whitesmoke;
     text-align:center;
     text-decoration:none;
+    //margin:auto;
+    float:left;
+    margin-left:10px;
 }
+.cuadro-blue {
+    background-color:blue;
+}
+
+.cuadro-darkmagenta {
+    background-color:darkmagenta;
+}
+
+.cuadro-lightsalmon {
+    background-color:tomato;
+}
+.cuadro-verde {
+    background-color:#009900;
+}
+
+
+.rectangulo-1 {
+    width: 270px;
+    height: 120px;
+    padding:10px;
+    margin:auto;
+    font-family:'Segoe UI';
+    text-align:start;
+    text-decoration:none;
+    float:left;
+    margin-top: 10px;
+    margin-left:10px;
+    font-size:x-small;
+    background-color:navy;
+}
+

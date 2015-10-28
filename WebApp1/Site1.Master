@@ -27,9 +27,9 @@
                 <asp:Label ID="lblUsername" Text="Ingrese sus credenciales" runat="server" />
                     
                          <br />
-                <asp:Label Text=" Usuario " runat="server" ID="lblUsuario" /><asp:TextBox ID="txtUsername" runat="server" Width="232px"></asp:TextBox>
+                <asp:Label Text=" Usuario " runat="server" ID="lblUsuario" Width="35%"/><asp:TextBox ID="txtUsername" runat="server" Width="232px"></asp:TextBox>
                 <br />
-                <asp:Label Text="Password" runat="server" ID="lblPassword" /><asp:TextBox ID="txtPassword" runat="server" Width="232px" TextMode="Password"></asp:TextBox>
+                <asp:Label Text="Password" runat="server" ID="lblPassword" Width="35%" /><asp:TextBox ID="txtPassword" runat="server" Width="232px" TextMode="Password"></asp:TextBox>
                 <br />
                 <asp:Button ID="btn_login" runat="server" Text="Iniciar Sesión" OnClick="btn_login_Click" />
                 <asp:Button ID="btn_logout" Text="Cerrar Sesión" runat="server" Visible="false" OnClick="btn_logout_Click" />
@@ -38,7 +38,7 @@
             </div>
             <div class="logo">
                 <a href="default.aspx">
-                <asp:Image ImageUrl="images/exception_logo.png" runat="server" Height="170px" Width="177px" />
+                <asp:Image ImageUrl="images/exception_logo.png" runat="server" Height="210px" />
                 </a>
             </div>
             
@@ -60,9 +60,9 @@
     <p/>
         <div class="page_title">
         <asp:ContentPlaceHolder ID="titulo" runat="server">
-            </asp:ContentPlaceHolder>
+        
+        </asp:ContentPlaceHolder>
         </div>
-        <br />
     </div>
     <div>
         <asp:ContentPlaceHolder ID="contenido" runat="server">

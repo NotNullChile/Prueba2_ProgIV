@@ -11,7 +11,10 @@ namespace WebApp1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Mantenedor"] != null)
+            {
+                lbl_username.Text = Session["Mantenedor"].ToString();
+            }
         }
     }
 }
