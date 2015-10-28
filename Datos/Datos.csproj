@@ -63,7 +63,6 @@
     <None Include="ClubException.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ClubException.Designer.cs</LastGenOutput>
     </None>
     <None Include="ClubException.xss">
       <DependentUpon>ClubException.xsd</DependentUpon>
