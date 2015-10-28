@@ -25,8 +25,8 @@
                     <asp:TextBox ID="text" runat="server" Text='<%# Bind("nombreEquipo") %>'></asp:TextBox>
                 </EditItemTemplate>
                 <InsertItemTemplate>
-                    <asp:TextBox ID="txtNombreEquipo" runat="server" Text='<%# Bind("nombreEquipo") %>'></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfNombreEquipo" runat="server" ControlToValidate="txtNombreEquipo" ErrorMessage="Debe ingresar un nombre" Font-Names="Microsoft Sans Serif" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:TextBox ID="txtNombreEquipo" runat="server" Text='<%# Bind("nombreEquipo") %>' ValidationGroup="nombreEquipo"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfNombreEquipo" runat="server" ControlToValidate="txtNombreEquipo" ErrorMessage="Debe ingresar un nombre" Font-Names="Microsoft Sans Serif" ForeColor="Red" ValidationGroup="nombreEquipo"></asp:RequiredFieldValidator>
                 </InsertItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label5" runat="server" Text='<%# Bind("nombreEquipo") %>'></asp:Label>
@@ -53,7 +53,7 @@
                     <asp:DropDownList ID="DDLDT" runat="server" DataSourceID="DSDT" DataTextField="nombreDT" DataValueField="rutDT" SelectedValue='<%# Bind("rutDT") %>'>
                     </asp:DropDownList>
                     <asp:ObjectDataSource ID="DSDT" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="mostrarDTs" TypeName="Negocio.DTsNegocio"></asp:ObjectDataSource>
-                    <asp:Label ID="lblError" runat="server"></asp:Label>
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/registrotecnico.aspx">¿Desea ingresar un nuevo técnico?</asp:HyperLink>
                 </InsertItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label3" runat="server" Text='<%# Bind("rutDT") %>'></asp:Label>
@@ -90,9 +90,80 @@
         </InsertParameters>
     </asp:ObjectDataSource>
     <br />
-    Datos a registrar son:
-    <br />Nombre Equipo (no se puede repetir) (no puede quedar vacío)
-    <br />Comuna que representa (no puede quedar vacío)
-    <br />Nombre del DT /(no se puede repetir) (no puede quedar vacío)
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellPadding="3" CellSpacing="1" DataKeyNames="idEquipo" DataSourceID="DSEquipoView" GridLines="None" PageSize="20">
+        <Columns>
+            <asp:BoundField DataField="idEquipo" HeaderText="Número" ReadOnly="True" SortExpression="idEquipo" />
+            <asp:TemplateField HeaderText="Equipo" SortExpression="nombreEquipo">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("nombreEquipo") %>'></asp:TextBox>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("nombreEquipo") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Comuna" SortExpression="idComuna">
+                <EditItemTemplate>
+                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="DSComunaView" DataTextField="nombreComuna" DataValueField="idComuna" SelectedValue='<%# Bind("idComuna") %>'>
+                    </asp:DropDownList>
+                    <asp:ObjectDataSource ID="DSComunaView" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="mostrarComunas" TypeName="Negocio.ComunasNegocio"></asp:ObjectDataSource>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("idComuna") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="DT" SortExpression="rutDT">
+                <EditItemTemplate>
+                    <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="DSDTView" DataTextField="nombreDT" DataValueField="rutDT" SelectedValue='<%# Bind("rutDT") %>'>
+                    </asp:DropDownList>
+                    <asp:ObjectDataSource ID="DSDTView" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="mostrarDTs" TypeName="Negocio.DTsNegocio"></asp:ObjectDataSource>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label3" runat="server" Text='<%# Bind("rutDT") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="División" SortExpression="division">
+                <EditItemTemplate>
+                    <asp:DropDownList ID="DropDownList3" runat="server" SelectedValue='<%# Bind("division") %>'>
+                        <asp:ListItem>1A</asp:ListItem>
+                        <asp:ListItem>1B</asp:ListItem>
+                    </asp:DropDownList>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label4" runat="server" Text='<%# Bind("division") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+        </Columns>
+        <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
+        <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#E7E7FF" />
+        <PagerStyle BackColor="#C6C3C6" ForeColor="Black" HorizontalAlign="Right" />
+        <RowStyle BackColor="#DEDFDE" ForeColor="Black" />
+        <SelectedRowStyle BackColor="#9471DE" Font-Bold="True" ForeColor="White" />
+        <SortedAscendingCellStyle BackColor="#F1F1F1" />
+        <SortedAscendingHeaderStyle BackColor="#594B9C" />
+        <SortedDescendingCellStyle BackColor="#CAC9C9" />
+        <SortedDescendingHeaderStyle BackColor="#33276A" />
+    </asp:GridView>
+    <asp:ObjectDataSource ID="DSEquipoView" runat="server" DeleteMethod="borrarEquipo" InsertMethod="guardarEquipo" OldValuesParameterFormatString="original_{0}" SelectMethod="mostrarEquipo" TypeName="Negocio.Equipos" UpdateMethod="modificarEquipo">
+        <DeleteParameters>
+            <asp:Parameter Name="idEquipo" Type="Int32" />
+            <asp:Parameter Name="original_idEquipo" Type="Int32" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="idEquipo" Type="Int32" />
+            <asp:Parameter Name="nombreEquipo" Type="String" />
+            <asp:Parameter Name="idComuna" Type="Int32" />
+            <asp:Parameter Name="rutDT" Type="Int32" />
+            <asp:Parameter Name="division" Type="String" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="nombreEquipo" Type="String" />
+            <asp:Parameter Name="idComuna" Type="Int32" />
+            <asp:Parameter Name="rutDT" Type="Int32" />
+            <asp:Parameter Name="division" Type="String" />
+            <asp:Parameter Name="Original_idEquipo" Type="Int32" />
+        </UpdateParameters>
+    </asp:ObjectDataSource>
+    <br />
     <br />
 </asp:Content>

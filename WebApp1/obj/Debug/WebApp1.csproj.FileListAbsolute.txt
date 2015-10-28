@@ -18,3 +18,13 @@ C:\Users\Randy\documents\visual studio 2013\Projects\Prueba2_Carrasco_Urtubia\We
 C:\Users\Randy\documents\visual studio 2013\Projects\Prueba2_Carrasco_Urtubia\WebApp1\obj\Debug\WebApp1.csprojResolveAssemblyReference.cache
 C:\Users\Randy\documents\visual studio 2013\Projects\Prueba2_Carrasco_Urtubia\WebApp1\obj\Debug\WebApp1.dll
 C:\Users\Randy\documents\visual studio 2013\Projects\Prueba2_Carrasco_Urtubia\WebApp1\obj\Debug\WebApp1.pdb
+C:\Users\Ricardo\Source\Repos\Prueba2_ProgIV2\WebApp1\bin\WebApp1.dll.config
+C:\Users\Ricardo\Source\Repos\Prueba2_ProgIV2\WebApp1\bin\WebApp1.dll
+C:\Users\Ricardo\Source\Repos\Prueba2_ProgIV2\WebApp1\bin\WebApp1.pdb
+C:\Users\Ricardo\Source\Repos\Prueba2_ProgIV2\WebApp1\bin\Negocio.dll
+C:\Users\Ricardo\Source\Repos\Prueba2_ProgIV2\WebApp1\bin\Datos.dll
+C:\Users\Ricardo\Source\Repos\Prueba2_ProgIV2\WebApp1\bin\Negocio.pdb
+C:\Users\Ricardo\Source\Repos\Prueba2_ProgIV2\WebApp1\bin\Datos.pdb
+C:\Users\Ricardo\Source\Repos\Prueba2_ProgIV2\WebApp1\obj\Debug\WebApp1.csprojResolveAssemblyReference.cache
+C:\Users\Ricardo\Source\Repos\Prueba2_ProgIV2\WebApp1\obj\Debug\WebApp1.dll
+C:\Users\Ricardo\Source\Repos\Prueba2_ProgIV2\WebApp1\obj\Debug\WebApp1.pdb

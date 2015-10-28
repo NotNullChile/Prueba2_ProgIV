@@ -11,7 +11,15 @@ namespace WebApp1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Mantenedor"] == null)
+            {
+                Response.Redirect("default.aspx");
+            }
+        }
 
+        protected void DetailsView1_ItemInserted(object sender, DetailsViewInsertedEventArgs e)
+        {
+            Response.Redirect("RegistroEquipos.aspx");
         }
     }
 }
