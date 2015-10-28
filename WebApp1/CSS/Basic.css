@@ -57,14 +57,28 @@
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.cuadrado {
+.cuadrado-1 {
     width: 150px;
     height: 150px;
-    background-color:rebeccapurple;
+    background-color:yellow;
     position:relative;
     padding:10px;
     top:60%;
     left:3%;
+    font-family:'Segoe UI';
+    color:whitesmoke;
+    text-align:center;
+    text-decoration:none;
+}
+
+.cuadrado-2 {
+    width: 150px;
+    height: 150px;
+    background-color:pink;
+    position:absolute;
+    padding:10px;
+    top:38.8%;
+    left:14%;
     font-family:'Segoe UI';
     color:whitesmoke;
     text-align:center;
